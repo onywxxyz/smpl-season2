@@ -375,7 +375,7 @@ input.bad,select.bad{border-color:var(--red)}
 
       <div class="field">
         <label class="lab" for="fName"><b>पूरा नाम</b> / Full Name <em>*</em></label>
-        <input type="text" id="fName" name="name" autocomplete="name" placeholder="जैसे / e.g. Rohit Kokitkar" maxlength="60">
+        <input type="text" id="fName" name="name" autocomplete="name" placeholder="जैसे / e.g. Bhavesh" maxlength="60">
         <p class="err" id="e_fName"></p>
       </div>
 
@@ -412,16 +412,7 @@ input.bad,select.bad{border-color:var(--red)}
         </div>
         <div class="field">
           <label class="lab" for="fSize"><b>जर्सी साइज़</b> / Jersey Size <em>*</em></label>
-          <select id="fSize" name="jerseySize">
-            <option value="">चुनें / Select</option>
-            <option value="36">36</option>
-            <option value="38">38</option>
-            <option value="40">40</option>
-            <option value="42">42</option>
-            <option value="44">44</option>
-            <option value="46">46</option>
-            <option value="48">48</option>
-          </select>
+          <input id="fSize" name="jerseySize" type="text" inputmode="numeric" autocomplete="off" placeholder="जैसे / e.g. 42" maxlength="3">
           <p class="err" id="e_fSize"></p>
         </div>
       </div>
@@ -739,7 +730,7 @@ function validate(){
   const num = $("fNumber").value.trim();
   if (num === "" || Number(num) < 0 || Number(num) > 999) fail("fNumber", "0 से 999 के बीच नंबर डालें / Number 0–999");
 
-  if (!$("fSize").value) fail("fSize", "साइज़ चुनें / Pick a size");
+  if (!$("fSize").value) fail("fSize", "साइज़ लिखें / Enter a size");
   if (!files.pay) fail("fPay", "पेमेंट स्क्रीनशॉट ज़रूरी है / Payment screenshot is required");
   if (!files.photo) fail("fPhoto", "अपना फोटो अपलोड करें / Please upload your photo");
 
